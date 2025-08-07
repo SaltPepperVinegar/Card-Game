@@ -9,6 +9,7 @@ namespace CardHouse
     public class Card : MonoBehaviour
     {
         [Serializable]
+        //define custom behaviors when a card enters or exits a specific cardgroup
         public class GroupTransitionEvent
         {
             public GroupName Group;
@@ -17,6 +18,7 @@ namespace CardHouse
         }
 
         [HideInInspector]
+        //current card group the card belongs to
         public CardGroup Group;
         public Homing Homing { get; private set; }
         public Turning Turning { get; private set; }
@@ -29,6 +31,7 @@ namespace CardHouse
         public float UpsideDownChance = 0.5f;
         public Transform RootToRotateWhenUpsideDown;
 
+        //special homing turning and scaling componenet used when the card is focused 
         public Homing FaceHoming;
         public Turning FaceTurning;
         public Scaling FaceScaling;
@@ -48,7 +51,7 @@ namespace CardHouse
         public static Action<Card> OnCardFocused;
 
         void Awake()
-        {
+        {   
             Homing = GetComponent<Homing>();
             Turning = GetComponent<Turning>();
             Scaling = GetComponent<Scaling>();

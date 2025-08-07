@@ -8,7 +8,7 @@ namespace CardHouse
     public class GateCollection<T>
     {
         public List<Gate<T>> Gates;
-
+        //return true when all the gates return true
         public bool AllUnlocked(T gateParams)
         {
             return Gates.Count == 0 || Gates.All(x => x.IsUnlocked(gateParams));
