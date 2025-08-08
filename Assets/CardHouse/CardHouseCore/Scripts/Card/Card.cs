@@ -42,6 +42,7 @@ namespace CardHouse
 
         public UnityEvent OnFlipUp;
         public UnityEvent OnFlipDown;
+        //when card is played, invoke this
         public UnityEvent OnPlay;
 
         public Action<Card, CardGroup> OnMount;
@@ -49,6 +50,8 @@ namespace CardHouse
         bool IsFocused;
 
         public static Action<Card> OnCardFocused;
+        public CardGroup LastUsedOnGroup { get; private set; }
+        public void NotifyUsedOnGroup(CardGroup group) => LastUsedOnGroup = group;
 
         void Awake()
         {   

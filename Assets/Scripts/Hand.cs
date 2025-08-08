@@ -4,6 +4,4 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-    List<Card> deck;
-
 }

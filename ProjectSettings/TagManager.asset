@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Creature
+  - Block
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Text
     uniqueID: 2032409835
+    locked: 0
+  - name: Effect
+    uniqueID: 2295136457
     locked: 0

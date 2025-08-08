@@ -8,6 +8,7 @@ namespace CardHouse
 {
     public class PhaseManager : MonoBehaviour
     {
+        [Tooltip("button that should be interactable during specific phases")]
         public List<Button> AllPhaseDependentButtons;
         public List<Phase> Phases;
         public Phase CurrentPhase => (CurrentPhaseIndex >= 0 && CurrentPhaseIndex < Phases.Count) ? Phases[CurrentPhaseIndex] : null;
@@ -16,7 +17,7 @@ namespace CardHouse
         {
             get { return CurrentPhase.PlayerIndex; }
         }
-
+        public int CurrentPlayer => CurrentPhase.PlayerIndex;
         public Action<Phase> OnPhaseChanged;
         public static PhaseManager Instance;
 

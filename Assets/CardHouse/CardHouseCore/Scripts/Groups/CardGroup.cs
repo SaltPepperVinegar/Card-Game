@@ -12,6 +12,7 @@ namespace CardHouse
         public bool HilightOnCardEntry = true;
         public GameObject Hilight;
 
+        //control whether a card can be dropped into that group
         public GateCollection<DropParams> DropGates;
 
         public SeekerScriptable<Vector3> ShuffleStrategy;
@@ -205,6 +206,7 @@ namespace CardHouse
                                 Scaling = cardDragHandler.PresentationSeekers.Scaling?.GetStrategy(presentationTransform.lossyScale.x)
                             });
                         }
+                        cardComponent.NotifyUsedOnGroup(this);
                         discardGroup.Mount(cardComponent, seekerSets: seekerSets);
                         cardComponent.HandlePlayed();
                         break;

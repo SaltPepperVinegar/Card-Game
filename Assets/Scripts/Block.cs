@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Creature creature = null;
+    public bool Occupied => creature != null;
+
+    public void LeaveBlock()
     {
-        
+        creature = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnterBlock(Creature creature)
     {
-        
+        if (this.creature != null) Debug.LogWarning("false enter");
+        this.creature = creature;
+    }
+
+    public bool Enterable()
+    {
+        return !Occupied;
     }
 }

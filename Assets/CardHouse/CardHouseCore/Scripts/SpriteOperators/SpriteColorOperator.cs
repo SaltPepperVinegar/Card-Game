@@ -26,5 +26,10 @@ namespace CardHouse
                 }
             }
         }
+
+        public void Change(string name)
+        {
+            ChangeSprite(name);
+        }
     }
 }
