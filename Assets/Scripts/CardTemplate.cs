@@ -23,8 +23,8 @@ public class CardTemplate : ScriptableObject
 [Serializable]
 public class ElementalCost
 {
-    [SerializeField] Element element;
-    [SerializeField] int Cost;
+    public Element element;
+    public int Cost;
 }
 public enum Element
 {

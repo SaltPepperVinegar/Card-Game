@@ -8,20 +8,30 @@ public class Card : MonoBehaviour
     public CardTemplate template;
     public int ownerPlayerId;
 
-    public int modifiedCost;
+    public ElementalCost[] elementalCosts;
     public GameObject cardPrefab;
 
+    void Start()
+    {
+        elementalCosts = template.cost;
+    }
     public void InstantiateCreature()
     {
         CardHouse.CardGroup cardGroup = GetComponent<CardHouse.Card>()?.LastUsedOnGroup;
         Block block = cardGroup?.GetComponent<Block>();
         if (block != null)
         {
-            GameObject card = Instantiate(cardPrefab, block.transform.position,quaternion.identity);
+            GameObject card = Instantiate(cardPrefab, block.transform.position, quaternion.identity);
             Creature creature = card.GetComponent<Creature>();
             ownerPlayerId = PhaseManager.Instance.CurrentPlayer;
             creature.Init(template, block, ownerPlayerId);
         }
+    }
+
+    public void ApplyCost()
+    {
+
+        TokenManager.Instance.ApplyCost(elementalCosts);
     }
 }
 

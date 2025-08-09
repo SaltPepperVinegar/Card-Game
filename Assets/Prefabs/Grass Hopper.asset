@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
-  m_Name: Slime
+  m_Name: Grass Hopper
   m_EditorClassIdentifier: 
-  name: Slime
+  name: GrassHopper
   description: 
-  element: 0
+  element: 5
   health: 2
   attack: 1
-  cost: []
+  cost:
+  - element: 5
+    Cost: 1
   upgrades: {fileID: 0}
   moveCost: 0
   actionPoint: 1
