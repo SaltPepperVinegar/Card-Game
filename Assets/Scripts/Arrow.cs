@@ -17,15 +17,17 @@ public class Arrow : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
         {
+            Block target = collision.GetComponent<Block>();
 
-            if (collision.gameObject != creature.block.gameObject && !collision.GetComponent<Block>().Occupied)
+            if (
+                collision.gameObject != creature.block.gameObject &&
+                BoardManager.Instance.Interactable(creature, target)
+                )
             {
-                if (block != null)
-                {
-                    block.GetComponent<CardHouse.SpriteColorOperator>().Change("Inactive");
-                }
-                block = collision.GetComponent<Block>();
-                block.GetComponent<CardHouse.SpriteColorOperator>().Change("Active");
+                Debug.Log("off by selection");
+                block?.Selected(false);
+                block = target;
+                block.Selected(true);
             }
         }
 
@@ -35,8 +37,9 @@ public class Arrow : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
-        {   
-            collision.GetComponent<CardHouse.SpriteColorOperator>().Change("Inactive");
+        {
+            Debug.Log("off by exit");
+            gameObject.GetComponent<Block>()?.Selected(false);
 
         }
 
@@ -45,7 +48,8 @@ public class Arrow : MonoBehaviour
 
     void OnDisable()
     {
-        block?.GetComponent<CardHouse.SpriteColorOperator>().Change("Inactive");
+
+        block?.Selected(false);
         block = null;
     }
 

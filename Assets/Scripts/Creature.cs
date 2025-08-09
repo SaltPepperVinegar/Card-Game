@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Creature : MonoBehaviour
 
     public Block block;
 
+    public int actionPoint = 1;
+
     public void Init(CardTemplate template, Block block, int Id)
     {
         this.template = template;
@@ -20,12 +23,43 @@ public class Creature : MonoBehaviour
         gameObject.transform.position = block.transform.position;
     }
 
-    public void MoveToBlock(Block to)
+
+
+
+    //check perform on the initiator action
+    public bool Interactable(Creature creature)
+    {
+        if (creature.ownerPlayerId != ownerPlayerId)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void InteractWith(Creature creature)
+    {
+        
+    }
+
+    public void MoveToBlock(Block target)
     {
 
-        block?.LeaveBlock();
-        gameObject.transform.position = to.transform.position;
-        block = to;
-        to.EnterBlock(this);
+        gameObject.transform.position = target.transform.position;
+        block = target;
+    }
+
+    public bool ReadyToAction()
+    {
+        if (CardHouse.PhaseManager.Instance.CurrentPlayer == ownerPlayerId)
+        {
+            if (actionPoint >= 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

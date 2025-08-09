@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: CardTemplate
   m_EditorClassIdentifier: 
+  name: 
+  description: 
+  element: 0
+  health: 0
+  attack: 0
+  Cost:
+  - element: 0
+    Cost: 0
+  upgrades: {fileID: 0}

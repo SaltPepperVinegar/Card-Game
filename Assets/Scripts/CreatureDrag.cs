@@ -16,6 +16,8 @@ public class CreatureDrag : MonoBehaviour
     Transform Head;
     private Vector3 offset;
     Arrow arrowScript;
+
+    Creature creature;
     void Start()
     {
         mainCamera = Camera.main;
@@ -23,7 +25,8 @@ public class CreatureDrag : MonoBehaviour
         arrow.transform.SetParent(transform, worldPositionStays: true);
         arrow.SetActive(false);
         arrowScript = arrow.GetComponent<Arrow>();
-        arrowScript.Init(this.GetComponent<Creature>());
+        creature = GetComponent<Creature>();
+        arrowScript.Init(creature);
 
     }
 
@@ -41,7 +44,7 @@ public class CreatureDrag : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (ClickedThisCreature() && GetComponent<Creature>().ownerPlayerId == PhaseManager.Instance.CurrentPlayer)
+            if (ClickedThisCreature() && creature.ReadyToAction())
             {
                 isDragging = true;
                 arrow.SetActive(true);
@@ -51,9 +54,9 @@ public class CreatureDrag : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && isDragging)
         {   
             isDragging = false;
-            if (arrowScript.block && !arrowScript.block.Occupied)
+            if (arrowScript.block)
             {
-                GetComponent<Creature>().MoveToBlock(arrowScript.block);
+                BoardManager.Instance.InteractWith(creature, arrowScript.block);
             }
             arrow.SetActive(false);
 

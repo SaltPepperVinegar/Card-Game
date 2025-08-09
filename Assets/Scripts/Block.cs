@@ -18,8 +18,8 @@ public class Block : MonoBehaviour
         this.creature = creature;
     }
 
-    public bool Enterable()
+    public void Selected(bool active)
     {
-        return !Occupied;
+        GetComponent<CardHouse.SpriteColorOperator>().Change(active? "Active" : "Inactive");
     }
 }
