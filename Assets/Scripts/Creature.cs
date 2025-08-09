@@ -20,7 +20,10 @@ public class Creature : MonoBehaviour
         this.block = block;
         block.EnterBlock(this);
         this.ownerPlayerId = Id;
-        gameObject.transform.position = block.transform.position;
+        transform.position = block.transform.position;
+        Vector3 scale = transform.localScale;
+        scale.y *= (Id == 0) ? 1 : -1;
+        transform.localScale = scale;
     }
 
 
