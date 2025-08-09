@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class RollManager : MonoBehaviour
     public int StartDiceCount;
     public GameObject dicePrefab;
     public Transform parentTransform;
+    public int MaximunReroll = 3;
+    public TextMeshProUGUI rerollCount;
+    private int rerolls;    
+    public int Rerolls { get{ return rerolls; } set { rerolls = value; rerollCount.text = "Rerolls: " + value.ToString();} }
     void Awake()
     {
         Instance = this;
@@ -21,10 +26,10 @@ public class RollManager : MonoBehaviour
     void Start()
     {
         IncreaseDice(StartDiceCount - DiceCount);
-        Roll();
     }
     public void Roll()
     {
+        Rerolls = MaximunReroll;
         elements = new int[6];
         foreach (ElementalDice dice in dices)
         {
@@ -35,15 +40,21 @@ public class RollManager : MonoBehaviour
 
     public void ReRoll()
     {
+        if (Rerolls <= 0)
+        {
+            return;
+        }
+        bool hasRerolled = false;
         foreach (ElementalDice dice in dices)
         {
             if (dice.Selected)
             {
                 elements[(int)dice.element] -= 1;
                 elements[(int)dice.Roll()] += 1;
-
+                hasRerolled = true;
             }
         }
+        if (hasRerolled) Rerolls -= 1;
     }
 
     public void IncreaseDice(int amount = 1)

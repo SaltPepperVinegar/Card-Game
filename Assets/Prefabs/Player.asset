@@ -19,5 +19,6 @@ MonoBehaviour:
   attack: 0
   cost: []
   upgrades: {fileID: 0}
+  effects: []
   moveCost: 0
   actionPoint: 0

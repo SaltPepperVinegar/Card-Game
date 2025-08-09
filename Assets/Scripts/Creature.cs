@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class Creature : MonoBehaviour
 {
@@ -78,6 +79,9 @@ public class Creature : MonoBehaviour
         Cost = DefaultCost = template.moveCost;
         ActionPointRefill = actionPoint = template.actionPoint;
         actionPoint = 0;
+        foreach (Effect effect in template.effects) {
+            gameObject.AddComponent<Effect>();
+        }
     }
 
     //check perform on the initiator action
@@ -124,7 +128,6 @@ public class Creature : MonoBehaviour
         ActionPointManager.Instance.ActionPointRefill.RemoveListener(RefillActionPoint);
 
         block.LeaveBlock();
-
     }
 
     void RefillActionPoint()

@@ -14,7 +14,7 @@ public class CardTemplate : ScriptableObject
     public int attack;
     public ElementalCost[] cost;
     public CardTemplate upgrades;
-
+    public Effect[] effects;
     public int moveCost;
     public int actionPoint = 1;
     
@@ -28,11 +28,11 @@ public class ElementalCost
 }
 public enum Element
 {
-    Fire,
-    Water,
-    Earth,
-    Lightning,
-    Ice,
-    Grass
+    Fire, //反伤
+    Water, //隐身
+    Earth, //护盾
+    Lightning, //迅捷
+    Ice, //冷冻
+    Grass //吸血
 }
 
