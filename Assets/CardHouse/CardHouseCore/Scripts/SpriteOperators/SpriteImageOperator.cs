@@ -15,7 +15,7 @@ namespace CardHouse
 
         public List<NamedSprite> Sprites;
 
-        protected override void ChangeSprite(string name)
+        public  override void ChangeSprite(string name)
         {
             foreach (var sprite in Sprites)
             {

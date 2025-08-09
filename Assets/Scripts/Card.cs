@@ -18,7 +18,7 @@ public class Card : MonoBehaviour
         if (block != null)
         {
             GameObject card = Instantiate(cardPrefab, block.transform.position,quaternion.identity);
-            Creature creature = card.AddComponent<Creature>();
+            Creature creature = card.GetComponent<Creature>();
             ownerPlayerId = PhaseManager.Instance.CurrentPlayer;
             creature.Init(template, block, ownerPlayerId);
         }

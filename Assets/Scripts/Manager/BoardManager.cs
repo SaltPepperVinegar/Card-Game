@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CardHouse;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,7 +14,13 @@ public class BoardManager : MonoBehaviour
     }
 
     public bool Interactable(Creature creature, Block target)
-    {   
+    {
+        if (PhaseManager.Instance.CurrentPhase.Name != "P1Action"
+        && PhaseManager.Instance.CurrentPhase.Name != "P2Action"
+        )
+        {
+            return false;
+        }
         if (target.Occupied)
         {
             if (creature.Interactable(target.creature))
@@ -34,12 +41,14 @@ public class BoardManager : MonoBehaviour
         if (target.Occupied)
         {
             creature.InteractWith(target.creature);
+            creature.PostInteractionEffect?.Invoke();
+            target.creature.PostInteractionEffect?.Invoke();
         }
         else
         {
             MoveToBlock(creature, target);
         }
-
+        
     }
 
 

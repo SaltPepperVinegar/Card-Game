@@ -24,7 +24,6 @@ public class Arrow : MonoBehaviour
                 BoardManager.Instance.Interactable(creature, target)
                 )
             {
-                Debug.Log("off by selection");
                 block?.Selected(false);
                 block = target;
                 block.Selected(true);
@@ -38,7 +37,6 @@ public class Arrow : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
         {
-            Debug.Log("off by exit");
             gameObject.GetComponent<Block>()?.Selected(false);
 
         }

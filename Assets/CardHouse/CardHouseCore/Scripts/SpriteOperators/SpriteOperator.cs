@@ -69,6 +69,6 @@ namespace CardHouse
             return counts.Count == 1;
         }
 
-        protected abstract void ChangeSprite(string name);
+        public abstract void ChangeSprite(string name);
     }
 }

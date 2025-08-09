@@ -22,7 +22,6 @@ public class CreatureDrag : MonoBehaviour
     {
         mainCamera = Camera.main;
         arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
-        arrow.transform.SetParent(transform, worldPositionStays: true);
         arrow.SetActive(false);
         arrowScript = arrow.GetComponent<Arrow>();
         creature = GetComponent<Creature>();
@@ -32,8 +31,8 @@ public class CreatureDrag : MonoBehaviour
 
     void Update()
     {
+        arrow.transform.position = transform.position;
         HandleMouseInput();
-
         if (isDragging)
         {
             UpdateArrow();

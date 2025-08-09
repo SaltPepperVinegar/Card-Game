@@ -15,7 +15,7 @@ namespace CardHouse
 
         public List<NamedColor> Colors;
 
-        protected override void ChangeSprite(string name)
+        public override void ChangeSprite(string name)
         {
             foreach (var namedColor in Colors)
             {

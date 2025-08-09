@@ -7,13 +7,16 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "CardTemplate", menuName = "Card/CardTemplate")]
 public class CardTemplate : ScriptableObject
 {
-    [SerializeField] String name;
-    [SerializeField] String description;
-    [SerializeField] Element element;
-    [SerializeField] int health;
-    [SerializeField] int attack;
-    [SerializeField] ElementalCost[] Cost;
-    [SerializeField] CardTemplate upgrades;
+    public String name;
+    public String description;
+    public Element element;
+    public int health;
+    public int attack;
+    public ElementalCost[] cost;
+    public CardTemplate upgrades;
+
+    public int moveCost;
+    public int actionPoint = 1;
     
 }
 
@@ -25,11 +28,11 @@ public class ElementalCost
 }
 public enum Element
 {
-    fire, //反伤
-    water, //隐身
-    ice, //护盾
-    electric, //迅捷
-    rock, //嘲讽
-    grass, //吸血
-
+    Fire,
+    Water,
+    Earth,
+    Lightning,
+    Ice,
+    Grass
 }
+
