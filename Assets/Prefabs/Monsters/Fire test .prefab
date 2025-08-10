@@ -304,6 +304,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Fire test '
       objectReference: {fileID: 0}
+    - target: {fileID: 1689174951601951915, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689174951601951915, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 4304800268894246246, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       propertyPath: IsActive
       value: 1
@@ -355,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dd5de7b58d2514a827ff59b660ff5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: {fileID: 11400000, guid: c68da7af85821fc42891f2c04c4c7631, type: 2}
+  template: {fileID: 11400000, guid: 0dca53ef27a6fe94885bc13843b3e58e, type: 2}
   ownerPlayerId: 0
   elementalCosts: []
   cardPrefab: {fileID: 8559677742335514005, guid: 1ce038a36492328499f4568309bfdad8, type: 3}

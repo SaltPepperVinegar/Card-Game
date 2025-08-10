@@ -304,6 +304,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Test
       objectReference: {fileID: 0}
+    - target: {fileID: 1689174951601951915, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689174951601951915, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 4304800268894246246, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       propertyPath: IsActive
       value: 1

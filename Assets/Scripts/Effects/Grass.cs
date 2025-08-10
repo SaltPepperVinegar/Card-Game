@@ -14,12 +14,12 @@ public class GrassEffect : Effect
     {
         if (battleParams.IsInitiator)
         {
-            int diff = Mathf.Min(0, battleParams.damageToTarget - battleParams.damageToSource);
+            int diff = Mathf.Max(0, battleParams.damageToTarget - battleParams.damageToSource);
             battleParams.source.Health += diff;
         }
         else
         {
-            int diff = Mathf.Min(0, battleParams.damageToSource - battleParams.damageToTarget);
+            int diff = Mathf.Max(0, battleParams.damageToSource - battleParams.damageToTarget);
             battleParams.target.Health += diff;
         }
     }

@@ -3215,29 +3215,81 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1970082754}
     - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: GroupPopulationList.Array.data[0].Group
-      value: 
-      objectReference: {fileID: 1873821903}
-    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
-      propertyPath: GroupPopulationList.Array.data[1].Group
-      value: 
-      objectReference: {fileID: 673341365}
-    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
-      propertyPath: GroupPopulationList.Array.data[2].Group
       value: 
       objectReference: {fileID: 1970082754}
     - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
-      propertyPath: GroupPopulationList.Array.data[3].Group
+      propertyPath: GroupPopulationList.Array.data[1].Group
       value: 
       objectReference: {fileID: 190633735}
     - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[2].Group
+      value: 
+      objectReference: {fileID: 673341365}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[3].Group
+      value: 
+      objectReference: {fileID: 673341365}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[4].Group
+      value: 
+      objectReference: {fileID: 1873821903}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[5].Group
+      value: 
+      objectReference: {fileID: 1873821903}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: GroupPopulationList.Array.data[0].CardCount
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: GroupPopulationList.Array.data[1].CardCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[2].CardCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[3].CardCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[4].CardCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[5].CardCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[0].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[1].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[2].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 489448bf6e04b7444a520fd21ed17b8d, type: 3}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[3].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 2e146238f2380674785acf8831ead660, type: 3}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[4].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 489448bf6e04b7444a520fd21ed17b8d, type: 3}
+    - target: {fileID: 6155219491839174572, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
+      propertyPath: GroupPopulationList.Array.data[5].CardPrefab
+      value: 
+      objectReference: {fileID: 159249280873958933, guid: 2e146238f2380674785acf8831ead660, type: 3}
     - target: {fileID: 6155219491839174573, guid: 9aa470ac017dc5c4a841406dde1da1be, type: 3}
       propertyPath: Phases.Array.data[0].CameraPosition
       value: 
