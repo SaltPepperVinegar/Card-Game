@@ -6,6 +6,10 @@ public class LightningEffect : Effect
 {
     void Start()
     {
+        Refresh();
+    }
+    public override void Refresh()
+    {
         GetComponent<Creature>().actionPoint = 1;
     }
 }

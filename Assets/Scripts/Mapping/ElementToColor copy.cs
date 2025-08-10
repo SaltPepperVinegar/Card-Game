@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ElementColor", menuName = "Card/ElementColor")]
+[CreateAssetMenu(fileName = "ElementToColor", menuName = "Card/ElementToColor")]
 public class ElementToColor : ScriptableObject
 {
     // Dictionary to map each Element to a color

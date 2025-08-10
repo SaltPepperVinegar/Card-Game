@@ -6,6 +6,10 @@ public class FireEffect : Effect
 {
     void Start()
     {
+        Refresh();
+    }
+    public override void Refresh()
+    {
         GetComponent<Creature>().PostBattleEffect.AddListener(PostBattleEffect);
     }
 
@@ -14,6 +18,10 @@ public class FireEffect : Effect
         if (battleParams.IsInitiator)
         {
             battleParams.source.Attack += battleParams.damageToSource;
-        }
+        } 
+        else if (!battleParams.IsInitiator)
+        {
+            battleParams.target.Attack += battleParams.damageToTarget;
+        } 
     }
 }

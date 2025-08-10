@@ -9,21 +9,29 @@ public class IceEffect : Effect
     void Start()
     {
         GetComponent<Creature>().PostBattleEffect.AddListener(PostBattleEffect);
+        Refresh();
+    }
+    public override void Refresh()
+    {
 
     }
 
     void PostBattleEffect(PostBattleParams battleParams)
     {
+        FreezedEffect freezedEffect;
         if (battleParams.IsInitiator)
         {
-            FreezedEffect freezedEffect = battleParams.target.gameObject.AddComponent<FreezedEffect>();
-            freezedEffect.freezesTurns = freezesTurns;
+            if ((freezedEffect = battleParams.target.gameObject.GetComponent<FreezedEffect>()) == null)
+            {
+                freezedEffect = battleParams.target.gameObject.AddComponent<FreezedEffect>();
+                freezedEffect.FreezesTurns = freezesTurns;
+                return;
+            }
+            freezedEffect.Refresh();
+            freezedEffect.FreezesTurns = freezesTurns;
+
         }
-        if (!battleParams.IsInitiator)
-        {
-            FreezedEffect freezedEffect = battleParams.source.gameObject.AddComponent<FreezedEffect>();
-            freezedEffect.freezesTurns = freezesTurns;
-        }
+
 
     }
 }

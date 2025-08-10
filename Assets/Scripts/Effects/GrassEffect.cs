@@ -6,8 +6,13 @@ public class GrassEffect : Effect
 {
     void Start()
     {
-
         GetComponent<Creature>().PostBattleEffect.AddListener(PostBattleEffect);
+
+        Refresh();
+    }
+    public override void Refresh()
+    {
+
     }
 
     void PostBattleEffect(PostBattleParams battleParams)

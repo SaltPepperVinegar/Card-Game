@@ -4,8 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Creature))]
 public class WaterEffect : Effect
 {
-    public int damageToAbsorb;
+    private int damageToAbsorb;
     void Start()
+    {
+        Refresh();
+    }
+    public override void Refresh()
     {
         GetComponent<Creature>().InteractEffect.AddListener(OnInitiateInteraction);
         GetComponent<Creature>().PreBattleEffect.AddListener(PreBattleEffect);
@@ -39,7 +43,6 @@ public class WaterEffect : Effect
         GetComponent<Creature>().PreBattleEffect.RemoveListener(PreBattleEffect);
 
         GetComponent<Creature>().PostBattleEffect.RemoveListener(PostBattleEffect);
-        Destroy(this);
 
     }
 }

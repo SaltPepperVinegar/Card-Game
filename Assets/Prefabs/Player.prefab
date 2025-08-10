@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
@@ -799,7 +799,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.48, z: 0}
-  m_LocalScale: {x: 0.8823529, y: 0.8823529, z: 0.8823529}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3139149535523320106}
@@ -945,24 +945,17 @@ MonoBehaviour:
   template: {fileID: 11400000, guid: 68fc2f4a9f53d564388af6f10c98c017, type: 2}
   ownerPlayerId: 1
   block: {fileID: 0}
+  currentHealth: 20
   healthText: {fileID: 6612670208240128608}
-  costText: {fileID: 231943608717169730}
   attackText: {fileID: 4422406464280363128}
-  PostInteractionEffect:
+  actionPoint: 0
+  TurnStartEffect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4713699671721454581}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: OnDeathDestroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  interactable: 1
+  InteractEffect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4713699671721454581
 MonoBehaviour:
   m_ObjectHideFlags: 0

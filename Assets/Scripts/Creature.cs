@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Creature : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class Creature : MonoBehaviour
     public int ownerPlayerId;
     public Block block;
 
-    private int DefaultHealth;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
 
     public int Health
     {
@@ -19,24 +19,22 @@ public class Creature : MonoBehaviour
         set { currentHealth = value; healthText.text = value.ToString(); Debug.Log("Set health to " + value); }
     }
     private int currentAttack;
-    private int DefaultAttack;
 
     public int Attack
     {
         get { return currentAttack; }
         set { currentAttack = value; attackText.text = value.ToString(); Debug.Log("Set attack to " + value); }
     }
-    private int DefaultCost;
 
     private int currentCost;
     public int Cost
     {
         get { return currentCost; }
-        set { currentCost = value; costText.text = value.ToString(); }
+        set { currentCost = value; }
     }
+
     [SerializeField]
     private TextMeshPro healthText,
-                            costText,
                             attackText;
 
     private int ActionPointRefill = 0;
@@ -44,24 +42,19 @@ public class Creature : MonoBehaviour
     public UnityEvent TurnStartEffect;
     public PreBattleEvent PreBattleEffect = new PreBattleEvent();
     public PostBattleEvent PostBattleEffect = new PostBattleEvent();
-    public SpriteRenderer elementSymbol;
     public bool interactable = true;
-
     public UnityEvent InteractEffect;
-    public void Start()
-    {
-        ActionPointManager.Instance.ActionPointRefill.AddListener(RefillActionPoint);
-    }
-
 
     public void Init(CardTemplate template, Block block, int Id)
     {
+        ActionPointManager.Instance.ActionPointRefill.AddListener(RefillActionPoint);
+
         this.template = template;
         this.block = block;
         block.EnterBlock(this);
         this.ownerPlayerId = Id;
         SetTransform();
-        InitStats();
+        if (this.template != null) InitStats();
     }
 
     void SetTransform()
@@ -75,15 +68,12 @@ public class Creature : MonoBehaviour
     }
     void InitStats()
     {
-        Attack = DefaultAttack = template.attack;
-        Health = DefaultHealth = template.health;
-        Cost = DefaultCost = template.moveCost;
+        Attack = template.attack;
+        Health  = template.health;
         ActionPointRefill = actionPoint = template.actionPoint;
         actionPoint = 0;
 
-        if (elementSymbol != null) elementSymbol.color = gameObject.GetComponent<ColorFinder>().Find(template.element);
-
-        CardTemplate.ElementToScript(template.element, this);
+        if(CardTemplate.ElementToScript(template.element, this)) GetComponent<ElementBarHandler>().AddElement(template.element);
     }
 
     //check perform on the initiator action

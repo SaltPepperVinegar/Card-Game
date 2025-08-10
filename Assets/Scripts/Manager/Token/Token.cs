@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(ColorFinder))]
+[RequireComponent(typeof(ElementFinder))]
 public class Token : MonoBehaviour
 {
     public Element element;
@@ -10,7 +10,7 @@ public class Token : MonoBehaviour
     public void SetElement(Element element)
     {
         this.element = element;
-        image.color = GetComponent<ColorFinder>().Find(element);
+        image.color = GetComponent<ElementFinder>().FindColor(element);
     }
 
     public void Update()
