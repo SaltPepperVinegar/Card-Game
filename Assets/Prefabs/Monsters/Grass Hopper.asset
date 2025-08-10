@@ -15,11 +15,12 @@ MonoBehaviour:
   name: GrassHopper
   description: 
   element: 5
-  health: 2
-  attack: 1
+  health: 4
+  attack: 3
   cost:
   - element: 5
     Cost: 1
   upgrades: {fileID: 0}
+  effects: []
   moveCost: 0
   actionPoint: 1

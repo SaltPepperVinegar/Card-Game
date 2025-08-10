@@ -364,8 +364,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278387459
-  m_fontColor: {r: 0.012578547, g: 0.012578547, b: 0.012578547, a: 1}
+    rgba: 197379
+  m_fontColor: {r: 0.012578547, g: 0.012578547, b: 0.012578547, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 8245128495730041296}
   - component: {fileID: 5870394588613124735}
   - component: {fileID: 1508519422818317609}
+  - component: {fileID: 8644282628579220683}
   m_Layer: 7
   m_Name: Creature
   m_TagString: Untagged
@@ -948,21 +949,8 @@ MonoBehaviour:
   healthText: {fileID: 6612670208240128608}
   costText: {fileID: 231943608717169730}
   attackText: {fileID: 4422406464280363128}
-  PostInteractionEffect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1508519422818317609}
-        m_TargetAssemblyTypeName: NoHealth, Assembly-CSharp
-        m_MethodName: OnDeathDestroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  actionPoint: 0
+  elementSymbol: {fileID: 16683063471658842}
 --- !u!114 &1508519422818317609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,3 +963,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d75f812a66643a409ad0ee5922bdaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8644282628579220683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559677742335514005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261d4f62fc3d45e45b63de0d8ac914ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 11400000, guid: 2efdeb61e9b31854d8c42446201e4c2d, type: 2}

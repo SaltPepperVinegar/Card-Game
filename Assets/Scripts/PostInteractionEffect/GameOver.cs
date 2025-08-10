@@ -6,11 +6,11 @@ public class GameOver : Effect
     
     public void Start()
     {
-        //GetComponent<Creature>().PostInteractionEffect.AddListener(OnDeathDestroy);
+        GetComponent<Creature>().PostBattleEffect.AddListener(OnDeathDestroy);
     }
 
 
-    public void OnDeathDestroy()
+    public void OnDeathDestroy(PostBattleParams battleParams)
     {
 
 

@@ -15,11 +15,12 @@ MonoBehaviour:
   name: Slime
   description: 
   element: 1
-  health: 2
-  attack: 1
+  health: 4
+  attack: 2
   cost:
   - element: 1
     Cost: 1
   upgrades: {fileID: 0}
+  effects: []
   moveCost: 0
   actionPoint: 1

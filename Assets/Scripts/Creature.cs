@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class Creature : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class Creature : MonoBehaviour
     public int Health
     {
         get { return currentHealth; }
-        set { currentHealth = value; healthText.text = value.ToString(); }
+        set { currentHealth = value; healthText.text = value.ToString(); Debug.Log("Set health to " + value); }
     }
     private int currentAttack;
     private int DefaultAttack;
@@ -26,7 +24,7 @@ public class Creature : MonoBehaviour
     public int Attack
     {
         get { return currentAttack; }
-        set { currentAttack = value; attackText.text = value.ToString(); }
+        set { currentAttack = value; attackText.text = value.ToString(); Debug.Log("Set attack to " + value); }
     }
     private int DefaultCost;
 
@@ -36,19 +34,22 @@ public class Creature : MonoBehaviour
         get { return currentCost; }
         set { currentCost = value; costText.text = value.ToString(); }
     }
-
     [SerializeField]
     private TextMeshPro healthText,
                             costText,
                             attackText;
 
     private int ActionPointRefill = 0;
-    private int actionPoint = 0;
+    public int actionPoint = 0;
+    public UnityEvent TurnStartEffect;
+    public PreBattleEvent PreBattleEffect = new PreBattleEvent();
+    public PostBattleEvent PostBattleEffect = new PostBattleEvent();
+    public SpriteRenderer elementSymbol;
+    public bool interactable = true;
 
-    public UnityEvent PostInteractionEffect;
+    public UnityEvent InteractEffect;
     public void Start()
     {
-        if (template != null) InitStats();
         ActionPointManager.Instance.ActionPointRefill.AddListener(RefillActionPoint);
     }
 
@@ -79,9 +80,10 @@ public class Creature : MonoBehaviour
         Cost = DefaultCost = template.moveCost;
         ActionPointRefill = actionPoint = template.actionPoint;
         actionPoint = 0;
-        foreach (Effect effect in template.effects) {
-            gameObject.AddComponent<Effect>();
-        }
+
+        if (elementSymbol != null) elementSymbol.color = gameObject.GetComponent<ColorFinder>().Find(template.element);
+
+        CardTemplate.ElementToScript(template.element, this);
     }
 
     //check perform on the initiator action
@@ -97,12 +99,6 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public void InteractWith(Creature creature)
-    {
-        actionPoint -= 1;
-        Health -= creature.Attack;
-        creature.Health -= Attack;
-    }
 
     public void MoveToBlock(Block target)
     {
@@ -133,5 +129,6 @@ public class Creature : MonoBehaviour
     void RefillActionPoint()
     {
         actionPoint = ActionPointRefill;
+        TurnStartEffect?.Invoke();
     }
 }

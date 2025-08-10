@@ -23,7 +23,7 @@ public class BoardManager : MonoBehaviour
         }
         if (target.Occupied)
         {
-            if (creature.Interactable(target.creature))
+            if (creature.Interactable(target.creature) && target.creature.Interactable(creature))
             {
                 return true;
             }
@@ -36,21 +36,48 @@ public class BoardManager : MonoBehaviour
         return true;
     }
 
-    public void InteractWith(Creature creature, Block target)
+
+    public void InteractWith(Creature source, Block targetBlock)
     {
-        if (target.Occupied)
+        if (targetBlock.Occupied)
         {
-            creature.InteractWith(target.creature);
-            creature.PostInteractionEffect?.Invoke();
-            target.creature.PostInteractionEffect?.Invoke();
+            source.InteractEffect?.Invoke();
+
+            Creature target = targetBlock.creature;
+
+            PreBattleParams preBattleParams = new PreBattleParams();
+            preBattleParams.source = source;
+            preBattleParams.target = target;
+
+            source.PreBattleEffect?.Invoke(preBattleParams);
+            target.PreBattleEffect?.Invoke(new PreBattleParams(preBattleParams).Swap());
+
+            PostBattleParams postBattleParams = ResolveAttack(source, target);
+            
+            source.PostBattleEffect?.Invoke(postBattleParams);
+            target.PostBattleEffect?.Invoke(new PostBattleParams(postBattleParams).Swap());
         }
         else
         {
-            MoveToBlock(creature, target);
+            source.InteractEffect?.Invoke();
+            MoveToBlock(source, targetBlock);
         }
         
     }
+    public PostBattleParams ResolveAttack(Creature source, Creature target)
+    {
+        PostBattleParams param = new PostBattleParams();
+        param.source = source;
+        param.target = target;
+        param.damageToTarget = source.Attack;
+        param.damageToSource = target.Attack;
 
+        source.actionPoint -= 1;
+        source.Health -= target.Attack;
+        target.Health -= source.Attack;
+
+        return param;
+    }
 
     public void MoveToBlock(Creature creature, Block target)
     {
