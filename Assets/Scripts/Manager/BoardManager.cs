@@ -72,7 +72,7 @@ public class BoardManager : MonoBehaviour
         param.damageToTarget = source.Attack;
         param.damageToSource = target.Attack;
 
-        source.actionPoint -= 1;
+        source.ActionPoint -= 1;
         source.Health -= target.Attack;
         target.Health -= source.Attack;
 

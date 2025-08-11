@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: EarthGiant
   m_EditorClassIdentifier: 
-  name: EarthGirant
-  description: 
+  CardName: EarthGiant
+  description: 'Terra: Gain shield 1/2 of your Health'
   element: 2
-  health: 6
-  attack: 1
+  health: 4
+  attack: 2
   cost:
-  - element: 4
+  - element: 2
     Cost: 1
+  sprite: {fileID: 0}
   upgrades: {fileID: 0}
   effects: []
   moveCost: 0

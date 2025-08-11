@@ -10,6 +10,6 @@ public class LightningEffect : Effect
     }
     public override void Refresh()
     {
-        GetComponent<Creature>().actionPoint = 1;
+        GetComponent<Creature>().ActionPoint = 2;
     }
 }

@@ -6,6 +6,8 @@ public class ShieldedEffect : Effect
 {
 
     public int shieldValue; 
+    private StatsToken token;
+
     public int ShieldValue
     {
         get { return shieldValue; }
@@ -18,13 +20,13 @@ public class ShieldedEffect : Effect
             }
             if (shieldValue == 0)
             {
-                Destroy(token.gameObject);
+                GetComponent<StatsBar>().RemoveStatToken(token);
                 GetComponent<Creature>().PostBattleEffect.RemoveListener(PostBattleEffect);
                 Destroy(this);
             }
         }
     }
-    private StatsToken token;
+    
     void Start()
     {
         GetComponent<Creature>().PostBattleEffect.AddListener(PostBattleEffect);

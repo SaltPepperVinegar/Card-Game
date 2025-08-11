@@ -20,6 +20,6 @@ public class Block : MonoBehaviour
 
     public void Selected(bool active)
     {
-        GetComponent<CardHouse.SpriteColorOperator>().Change(active? "Active" : "Inactive");
+        GetComponent<CardHouse.SpriteColorOperator>().Change(active ? "Active" : "Inactive");
     }
 }

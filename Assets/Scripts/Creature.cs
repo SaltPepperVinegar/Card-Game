@@ -32,13 +32,20 @@ public class Creature : MonoBehaviour
         get { return currentCost; }
         set { currentCost = value; }
     }
+    public SpriteRenderer Image;
 
     [SerializeField]
     private TextMeshPro healthText,
                             attackText;
 
-    private int ActionPointRefill = 0;
-    public int actionPoint = 0;
+    public int ActionPointRefill = 1;
+    public int ActionPoint { get => actionPoint; set {
+            actionPoint = value;
+            Debug.Log(actionPoint);
+            GetComponent<CreatureSelect>().Select(actionPoint <= 0 ? SelectState.Inactive : SelectState.Default); } }
+
+    private int actionPoint = 0;
+
     public UnityEvent TurnStartEffect;
     public PreBattleEvent PreBattleEffect = new PreBattleEvent();
     public PostBattleEvent PostBattleEffect = new PostBattleEvent();
@@ -70,9 +77,9 @@ public class Creature : MonoBehaviour
     {
         Attack = template.attack;
         Health  = template.health;
-        ActionPointRefill = actionPoint = template.actionPoint;
-        actionPoint = 0;
-
+        ActionPointRefill = ActionPoint = template.actionPoint;
+        ActionPoint = 1;
+        Image.sprite = template.sprite;
         if(CardTemplate.ElementToScript(template.element, this)) GetComponent<ElementBarHandler>().AddElement(template.element);
     }
 
@@ -92,7 +99,7 @@ public class Creature : MonoBehaviour
 
     public void MoveToBlock(Block target)
     {
-        actionPoint -= 1;
+        ActionPoint -= 1;
         gameObject.transform.position = target.transform.position;
         block = target;
     }
@@ -101,7 +108,7 @@ public class Creature : MonoBehaviour
     {
         if (CardHouse.PhaseManager.Instance.CurrentPlayer == ownerPlayerId)
         {
-            if (actionPoint > 0)
+            if (ActionPoint > 0)
             {
                 return true;
             }
@@ -118,7 +125,7 @@ public class Creature : MonoBehaviour
 
     void RefillActionPoint()
     {
-        actionPoint = ActionPointRefill;
+        ActionPoint = ActionPointRefill;
         TurnStartEffect?.Invoke();
     }
 }

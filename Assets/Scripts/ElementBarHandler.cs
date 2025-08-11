@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof (ElementFinder))]
 public class ElementBarHandler : MonoBehaviour
 {
     public Transform elementBar;

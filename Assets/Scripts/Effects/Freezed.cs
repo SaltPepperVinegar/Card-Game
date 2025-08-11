@@ -39,14 +39,16 @@ public class FreezedEffect : Effect
             return;
         }
 
+
         FreezesTurns -= 1;
-        GetComponent<Creature>().actionPoint = 0;
+
+        GetComponent<Creature>().ActionPoint = 0;
     }
 
     void OnDestroy()
     {
         GetComponent<Creature>().TurnStartEffect.RemoveListener(TurnStartEffect);
-        Destroy(token.gameObject);
+        GetComponent<StatsBar>().RemoveStatToken(token);
 
     }
 }

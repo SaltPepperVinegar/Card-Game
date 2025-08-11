@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: Grass Hopper
   m_EditorClassIdentifier: 
-  name: GrassHopper
-  description: 
+  CardName: Grass Hopper
+  description: 'Verdant: Recover health for every damage higher than enemy.'
   element: 5
   health: 4
   attack: 3
   cost:
   - element: 5
     Cost: 1
+  sprite: {fileID: 0}
   upgrades: {fileID: 0}
   effects: []
   moveCost: 0

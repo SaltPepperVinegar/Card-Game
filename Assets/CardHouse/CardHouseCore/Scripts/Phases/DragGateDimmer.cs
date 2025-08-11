@@ -20,7 +20,8 @@ namespace CardHouse
         {
             if (!IsActive || Handler == null)
                 return;
-
+            Debug.Log(MyDraggable.DragGates);
+            Debug.Log(Handler);
             Handler.Activate(
                 MyDraggable.DragGates.AllUnlocked(null)
                     ? ActiveMessage

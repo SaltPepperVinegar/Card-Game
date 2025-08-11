@@ -8,15 +8,16 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "CardTemplate", menuName = "Card/CardTemplate")]
 public class CardTemplate : ScriptableObject
 {
-    public String name;
-    public String description;
+    public String CardName;
+    [TextArea(3, 10)] public String description;
     public Element element;
     public int health;
     public int attack;
     public ElementalCost[] cost;
-    public CardTemplate upgrades;
-    public Effect[] effects;
-    public int moveCost;
+    public Sprite sprite;
+    public CreatureType creatureType;
+
+    public CardType cardType;
     public int actionPoint = 1;
 
     public static bool ElementToScript(Element element, Creature creature)
@@ -87,3 +88,17 @@ public enum Element
     Grass //吸血
 }
 
+
+public enum CardType
+{
+    Creature,
+    Enhancement,
+    Spell,
+}
+
+public enum CreatureType
+{
+    Golem,
+    Slime, 
+    Bat
+}
