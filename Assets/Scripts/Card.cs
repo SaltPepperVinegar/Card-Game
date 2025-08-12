@@ -6,9 +6,23 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public CardTemplate template;
-    public int ownerPlayerId;
+    private int ownerPlayerId = -1;
 
     public ElementalCost[] elementalCosts;
+
+    public int OwnerPlayerId
+    {
+        get
+        {
+            if (ownerPlayerId == -1)
+            {
+                ownerPlayerId =  GroupRegistry.Instance
+                .GetOwnerIndex(GetComponent<CardHouse.Card>().Group) ?? 0;
+
+            }
+            return ownerPlayerId;
+        }
+    } 
 
     void Start()
     {
@@ -20,5 +34,10 @@ public class Card : MonoBehaviour
 
         TokenManager.Instance.ApplyCost(elementalCosts);
     }
+    public virtual bool CheckDropable(Block block)
+    {
+        return true;
+    }
+
 }
 

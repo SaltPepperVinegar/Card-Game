@@ -1,30 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 public class EvolutionCard : Card
 {
-    public GameObject spellPrefab;
-
     void Start()
     {
         elementalCosts = template.cost;
     }
-    public void InstantiateCreature()
+    public void CreatureEvolution()
     {
-        CardHouse.GroupRegistry registry = CardHouse.GroupRegistry.Instance;
-
-        ownerPlayerId =(int) registry.GetOwnerIndex(GetComponent<CardHouse.Card>().Group);
-
         CardHouse.CardGroup cardGroup = GetComponent<CardHouse.Card>()?.LastUsedOnGroup;
         Block block = cardGroup?.GetComponent<Block>();
         if (block != null)
         {
-            GameObject card = Instantiate(spellPrefab, block.transform.position, quaternion.identity);
-            Creature creature = card.GetComponent<Creature>();
-            creature.Init(template, block, ownerPlayerId);
+            block.creature.AddElement(template.element);
         }
     }
 
+    public override bool CheckDropable(Block block)
+    {
+        if (block.Occupied
+            && block.creature.ownerPlayerId == OwnerPlayerId
+            && block.creature.CanAddElement(template.element))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 

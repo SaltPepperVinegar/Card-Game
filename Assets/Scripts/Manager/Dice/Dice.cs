@@ -10,7 +10,7 @@ public class ElementalDice : MonoBehaviour
     public GameObject Object;
     public Element Roll()
     {
-        int roll = Random.Range(0, 5);
+        int roll = Random.Range(0, 6);
         element = (Element)roll;
         GetComponentInChildren<TextMeshProUGUI>().text = element.ToString();
         Selected = false;

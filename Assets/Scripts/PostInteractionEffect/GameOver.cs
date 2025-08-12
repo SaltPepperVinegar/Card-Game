@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Creature))]
 public class GameOver : Effect
 {
@@ -17,6 +18,8 @@ public class GameOver : Effect
         if (GetComponent<Creature>().Health <= 0)
         {
             Debug.Log("Player " + GetComponent<Creature>().ownerPlayerId + "Loss");
+            SceneManager.LoadScene("End" + GetComponent<Creature>().ownerPlayerId);
+            Destroy(DeckTransfer.Instance.gameObject);
         }
     } 
 }

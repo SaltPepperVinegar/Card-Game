@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
@@ -945,10 +945,11 @@ MonoBehaviour:
   template: {fileID: 11400000, guid: 68fc2f4a9f53d564388af6f10c98c017, type: 2}
   ownerPlayerId: 1
   block: {fileID: 0}
-  currentHealth: 20
+  currentHealth: 2
+  Image: {fileID: 0}
   healthText: {fileID: 6612670208240128608}
   attackText: {fileID: 4422406464280363128}
-  actionPoint: 0
+  ActionPointRefill: 1
   TurnStartEffect:
     m_PersistentCalls:
       m_Calls: []
@@ -956,6 +957,8 @@ MonoBehaviour:
   InteractEffect:
     m_PersistentCalls:
       m_Calls: []
+  ElementCount: 0
+  isPlayer: 0
 --- !u!114 &4713699671721454581
 MonoBehaviour:
   m_ObjectHideFlags: 0

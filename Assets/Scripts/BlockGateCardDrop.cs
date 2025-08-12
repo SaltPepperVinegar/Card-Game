@@ -1,22 +1,27 @@
 using UnityEngine;
+using CardHouse;
 
-namespace CardHouse
+[RequireComponent(typeof(CardGroup))]
+[RequireComponent(typeof(Block))]
+
+public class BlockCardDrop : Gate<DropParams>
 {
-    [RequireComponent(typeof(CardGroup))]
-    [RequireComponent(typeof(Block))]
+    CardGroup MyGroup;
 
-    public class BlockCardDrop : Gate<DropParams>
+    void Awake()
     {
-        CardGroup MyGroup;
+        MyGroup = GetComponent<CardGroup>();
+    }
 
-        void Awake()
+    protected override bool IsUnlockedInternal(DropParams gateParams)
+    {
+        Card card = gateParams.Card.GetComponent<Card>();
+        Block block = GetComponent<Block>();
+        if (card != null && block != null)
         {
-            MyGroup = GetComponent<CardGroup>();
+            return card.CheckDropable(block);
         }
-
-        protected override bool IsUnlockedInternal(DropParams gateParams)
-        {
-            return !GetComponent<Block>().Occupied;
-        }
+        
+        return true;
     }
 }

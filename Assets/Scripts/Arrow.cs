@@ -37,7 +37,7 @@ public class Arrow : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
         {
-            gameObject.GetComponent<Block>()?.Selected(false);
+            collision.gameObject.GetComponent<Block>()?.Selected(false);
 
         }
 

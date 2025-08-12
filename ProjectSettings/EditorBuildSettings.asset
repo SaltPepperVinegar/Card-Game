@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 5667fcd6994c71f408fd45cb6852fc0f
+  - enabled: 1
     path: Assets/Scenes/DeckBuildMultiPlayer.unity
     guid: df2f93d73f2cd734a8ef5785273955ea
   - enabled: 1
     path: Assets/Scenes/BattleMultiPlayer.unity
     guid: 9e1905f4b06d4fa44bac93eb9c11cf15
+  - enabled: 1
+    path: Assets/Scenes/End1.unity
+    guid: fa0bc1a20bcc04b4483fb3f7054875da
+  - enabled: 1
+    path: Assets/Scenes/End2.unity
+    guid: 08762b5942b0d6c4885ae34169cee811
   m_configObjects: {}

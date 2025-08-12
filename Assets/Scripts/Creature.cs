@@ -39,10 +39,14 @@ public class Creature : MonoBehaviour
                             attackText;
 
     public int ActionPointRefill = 1;
-    public int ActionPoint { get => actionPoint; set {
+    public int ActionPoint
+    {
+        get => actionPoint; set
+        {
             actionPoint = value;
-            Debug.Log(actionPoint);
-            GetComponent<CreatureSelect>().Select(actionPoint <= 0 ? SelectState.Inactive : SelectState.Default); } }
+            GetComponent<CreatureSelect>().Select(actionPoint <= 0 ? SelectState.Inactive : SelectState.Default);
+        }
+    }
 
     private int actionPoint = 0;
 
@@ -51,7 +55,9 @@ public class Creature : MonoBehaviour
     public PostBattleEvent PostBattleEffect = new PostBattleEvent();
     public bool interactable = true;
     public UnityEvent InteractEffect;
+    public int ElementCount = 0;
 
+    public bool isPlayer = false;
     public void Init(CardTemplate template, Block block, int Id)
     {
         ActionPointManager.Instance.ActionPointRefill.AddListener(RefillActionPoint);
@@ -76,11 +82,11 @@ public class Creature : MonoBehaviour
     void InitStats()
     {
         Attack = template.attack;
-        Health  = template.health;
+        Health = template.health;
         ActionPointRefill = ActionPoint = template.actionPoint;
         ActionPoint = 1;
         Image.sprite = template.sprite;
-        if(CardTemplate.ElementToScript(template.element, this)) GetComponent<ElementBarHandler>().AddElement(template.element);
+        AddElement(template.element);
     }
 
     //check perform on the initiator action
@@ -117,7 +123,7 @@ public class Creature : MonoBehaviour
     }
 
     void OnDestroy()
-    {   
+    {
         ActionPointManager.Instance.ActionPointRefill.RemoveListener(RefillActionPoint);
 
         block.LeaveBlock();
@@ -128,4 +134,115 @@ public class Creature : MonoBehaviour
         ActionPoint = ActionPointRefill;
         TurnStartEffect?.Invoke();
     }
+
+    public void AddElement(Element element)
+    {
+        if (ElementToScript(element))
+        {
+            GetComponent<ElementBarHandler>().AddElement(element);
+            ElementCount++;
+        }
+    }
+
+    public bool CanAddElement(Element element)
+    {
+        return CheckElementNotExist(element) && ElementCount <= 3 && !isPlayer;
+    }
+
+
+
+    public bool ElementToScript(Element element)
+    {
+        switch (element)
+        {
+            case Element.Fire:
+                if (GetComponent<FireEffect>() == null)
+                {
+                    gameObject.AddComponent<FireEffect>();
+                    return true;
+                }
+                return false;
+            case Element.Water:
+                if (GetComponent<WaterEffect>() == null)
+                {
+                    gameObject.AddComponent<WaterEffect>();
+                    return true;
+                }
+                return false;
+            case Element.Earth:
+                if (GetComponent<EarthEffect>() == null)
+                {
+                    gameObject.AddComponent<EarthEffect>();
+                    return true;
+                }
+                return false;
+            case Element.Lightning:
+                if (GetComponent<LightningEffect>() == null)
+                {
+                    gameObject.AddComponent<LightningEffect>();
+                    return true;
+                }
+                return false;
+            case Element.Ice:
+                if (GetComponent<IceEffect>() == null)
+                {
+                    gameObject.AddComponent<IceEffect>();
+                    return true;
+                }
+                return false;
+            case Element.Grass:
+                if (GetComponent<GrassEffect>() == null)
+                {
+                    gameObject.AddComponent<GrassEffect>();
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }   
+    bool CheckElementNotExist(Element element)
+    {
+        switch (element)
+        {
+            case Element.Fire:
+                if (GetComponent<FireEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+            case Element.Water:
+                if (GetComponent<WaterEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+            case Element.Earth:
+                if (GetComponent<EarthEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+            case Element.Lightning:
+                if (GetComponent<LightningEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+            case Element.Ice:
+                if (GetComponent<IceEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+            case Element.Grass:
+                if (GetComponent<GrassEffect>() == null)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }   
+
+
 }

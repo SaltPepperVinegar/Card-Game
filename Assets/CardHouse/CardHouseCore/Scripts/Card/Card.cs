@@ -48,7 +48,7 @@ namespace CardHouse
         public Action<Card, CardGroup> OnMount;
 
         bool IsFocused;
-
+        public bool AllowsAnyDrops = false;
         public static Action<Card> OnCardFocused;
         public CardGroup LastUsedOnGroup { get; private set; }
         public void NotifyUsedOnGroup(CardGroup group) => LastUsedOnGroup = group;

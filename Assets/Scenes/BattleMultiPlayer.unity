@@ -1040,6 +1040,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 1202068746}
+    - target: {fileID: 5870394588613124735, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302261265840057355, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1193,6 +1197,10 @@ PrefabInstance:
       propertyPath: block
       value: 
       objectReference: {fileID: 704304481}
+    - target: {fileID: 5870394588613124735, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5870394588613124735, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
       propertyPath: ownerPlayerId
       value: 0
@@ -4222,11 +4230,17 @@ MonoBehaviour:
   RunOnStart: 1
   GroupPopulationList:
   - Group: {fileID: 190633735}
-    CardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
-    CardCount: 5
+    CardPrefab: {fileID: 159249280873958933, guid: 9d7e6bc4e5b410547bd5802c083603b4, type: 3}
+    CardCount: 3
+  - Group: {fileID: 1970082754}
+    CardPrefab: {fileID: 159249280873958933, guid: 9d7e6bc4e5b410547bd5802c083603b4, type: 3}
+    CardCount: 3
   - Group: {fileID: 1970082754}
     CardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
-    CardCount: 5
+    CardCount: 3
+  - Group: {fileID: 190633735}
+    CardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+    CardCount: 3
   GroupsToShuffle:
   - {fileID: 1970082754}
   - {fileID: 190633735}

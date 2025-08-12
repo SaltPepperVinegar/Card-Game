@@ -20,56 +20,6 @@ public class CardTemplate : ScriptableObject
     public CardType cardType;
     public int actionPoint = 1;
 
-    public static bool ElementToScript(Element element, Creature creature)
-    {
-        Debug.Log("add componenet");
-        switch (element)
-        {
-            case Element.Fire:
-                if (creature.GetComponent<FireEffect>() == null)
-                {
-                    creature.AddComponent<FireEffect>();
-                    return true;
-                }
-                return false;
-            case Element.Water:
-                if (creature.GetComponent<WaterEffect>() == null)
-                {
-                    creature.AddComponent<WaterEffect>();
-                    return true;
-                }
-                return false;
-            case Element.Earth:
-                if (creature.GetComponent<EarthEffect>() == null)
-                {
-                    creature.AddComponent<EarthEffect>();
-                    return true;
-                }
-                return false;
-            case Element.Lightning:
-                if (creature.GetComponent<LightningEffect>() == null)
-                {
-                    creature.AddComponent<LightningEffect>();
-                    return true;
-                }
-                return false;
-            case Element.Ice:
-                if (creature.GetComponent<IceEffect>() == null)
-                {
-                    creature.AddComponent<IceEffect>();
-                    return true;
-                }
-                return false;
-            case Element.Grass:
-                if (creature.GetComponent<GrassEffect>() == null)
-                {
-                    creature.AddComponent<GrassEffect>();
-                    return true;
-                }
-                return false;
-        }
-        return false;
-    }   
 }
 
 [Serializable]

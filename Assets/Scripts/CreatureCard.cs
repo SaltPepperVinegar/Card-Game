@@ -12,9 +12,6 @@ public class CreatureCard : Card
     }
     public void InstantiateCreature()
     {
-        CardHouse.GroupRegistry registry = CardHouse.GroupRegistry.Instance;
-
-        ownerPlayerId =(int) registry.GetOwnerIndex(GetComponent<CardHouse.Card>().Group);
 
         CardHouse.CardGroup cardGroup = GetComponent<CardHouse.Card>()?.LastUsedOnGroup;
         Block block = cardGroup?.GetComponent<Block>();
@@ -22,9 +19,12 @@ public class CreatureCard : Card
         {
             GameObject card = Instantiate(creaturePrefab, block.transform.position, quaternion.identity);
             Creature creature = card.GetComponent<Creature>();
-            creature.Init(template, block, ownerPlayerId);
+            creature.Init(template, block, OwnerPlayerId);
         }
     }
-
+    public override bool CheckDropable(Block block)
+    {
+        return !block.Occupied;
+    }
 }
 

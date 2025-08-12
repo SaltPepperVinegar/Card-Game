@@ -14,7 +14,9 @@ namespace CardHouse
 
         protected override bool IsUnlockedInternal(DropParams gateParams)
         {
-            return PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true;
+
+            return (PhaseManager.Instance?.IsValidDrag(gateParams.Source, MyGroup, gateParams.DragType) ?? true) ||
+            (gateParams.Card.AllowsAnyDrops && GetComponent<Block>() != null);
         }
     }
 }
