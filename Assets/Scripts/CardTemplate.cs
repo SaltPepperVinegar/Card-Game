@@ -18,6 +18,7 @@ public class CardTemplate : ScriptableObject
     public CreatureType creatureType;
 
     public CardType cardType;
+    public GameObject SpellPrefab;
     public int actionPoint = 1;
 
 }

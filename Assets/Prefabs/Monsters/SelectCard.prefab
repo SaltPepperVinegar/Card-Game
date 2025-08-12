@@ -439,6 +439,38 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1696114598198819657}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToggleFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Blard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954005171290756681, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+      propertyPath: OnButtonClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1981443592538718908, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       propertyPath: m_Sprite
       value: 

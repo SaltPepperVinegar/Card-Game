@@ -1199,7 +1199,7 @@ PrefabInstance:
       objectReference: {fileID: 704304481}
     - target: {fileID: 5870394588613124735, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
       propertyPath: isPlayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5870394588613124735, guid: b6016d930ac616547bcc2f14f78e47cf, type: 3}
       propertyPath: ownerPlayerId
@@ -4228,7 +4228,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RunOnStart: 1
-  GroupPopulationList: []
+  GroupPopulationList:
+  - Group: {fileID: 190633735}
+    CardPrefab: {fileID: 159249280873958933, guid: 9d7e6bc4e5b410547bd5802c083603b4, type: 3}
+    CardCount: 3
+  - Group: {fileID: 1970082754}
+    CardPrefab: {fileID: 159249280873958933, guid: 9d7e6bc4e5b410547bd5802c083603b4, type: 3}
+    CardCount: 3
+  - Group: {fileID: 1970082754}
+    CardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+    CardCount: 3
+  - Group: {fileID: 190633735}
+    CardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+    CardCount: 3
   GroupsToShuffle:
   - {fileID: 1970082754}
   - {fileID: 190633735}
