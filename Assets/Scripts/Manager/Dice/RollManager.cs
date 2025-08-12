@@ -15,6 +15,8 @@ public class RollManager : MonoBehaviour
     public GameObject dicePrefab;
     public Transform parentTransform;
     public int MaximunReroll = 3;
+    public int MaximunTotalDice = 12;
+
     public TextMeshProUGUI rerollCount;
     private int rerolls;    
     public int Rerolls { get{ return rerolls; } set { rerolls = value; rerollCount.text = "Rerolls: " + value.ToString();} }
@@ -61,6 +63,10 @@ public class RollManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
+            if (dices.Count >= MaximunTotalDice)
+            {
+                return;
+            }
             GameObject dice = Instantiate(dicePrefab, parentTransform);
             dices.Add(dice.GetComponent<ElementalDice>());
         }

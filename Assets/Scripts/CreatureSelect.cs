@@ -9,6 +9,7 @@ public class CreatureSelect : MonoBehaviour
     public Color Inactive;
     public void Select(SelectState state)
     {
+        Debug.Log("select " + state);
         switch (state)
         {
             case SelectState.Selected:

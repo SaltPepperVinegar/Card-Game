@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Creature))]
 public class GameOver : Effect
 {
-    
+
     public void Start()
     {
-        
+
         GetComponent<Creature>().PostBattleEffect.AddListener(OnDeathDestroy);
     }
 
@@ -18,9 +18,13 @@ public class GameOver : Effect
 
         if (GetComponent<Creature>().Health <= 0)
         {
-            Debug.Log("Player " + GetComponent<Creature>().ownerPlayerId + "Loss");
-            SceneManager.LoadScene("End" + GetComponent<Creature>().ownerPlayerId);
             Destroy(DeckTransfer.Instance.gameObject);
         }
-    } 
+    }
+    void OnDestroy()
+    {
+        Debug.Log("Player " + GetComponent<Creature>().ownerPlayerId + "Loss");
+        SceneManager.LoadScene("End" + GetComponent<Creature>().ownerPlayerId);
+
+    }
 }

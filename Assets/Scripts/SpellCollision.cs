@@ -6,24 +6,26 @@ public class Spell : MonoBehaviour
 {
     public LayerMask blockLayer;
     public SpellCard card;
+    public int ownerPlayerId;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
         {
             Block target = collision.GetComponent<Block>();
 
-            if (target != null)
+            if (target != null )
             {
                 card.blocks.Add(target);
+                Debug.Log(target);
                 target.GetComponent<CreatureSelect>().Select(SelectState.Selected);
-
             }
         }
 
 
     }
-    public void Init(SpellCard card)
+    public void Init(SpellCard card, int ownerPlayerId)
     {
+        this.ownerPlayerId = ownerPlayerId;
         this.card = card;
     }
     void OnTriggerExit2D(Collider2D collision)
@@ -31,7 +33,7 @@ public class Spell : MonoBehaviour
         if (((1 << collision.gameObject.layer) & blockLayer) != 0)
         {
             Block target = collision.GetComponent<Block>();
-            if (target != null)
+            if (target != null && card.blocks.Contains(target))
             {
                 card.blocks.Remove(target);
                 target.GetComponent<CreatureSelect>().Select(SelectState.Default);

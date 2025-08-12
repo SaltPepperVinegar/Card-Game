@@ -4,7 +4,6 @@ using Unity.Mathematics;
 using UnityEngine;
 public class SpellCard : Card
 {
-    public GameObject spellPrefab;
     private GameObject spellInstance;
     public List<Block> blocks = new List<Block>();
 
@@ -15,7 +14,10 @@ public class SpellCard : Card
 
     public void CastSpell()
     {
-        spellPrefab.GetComponent<SpellEffect>().CastSpell(blocks, OwnerPlayerId);
+        if (template.SpellPrefab != null){
+            template.SpellPrefab.GetComponent<SpellEffect>().CastSpell(blocks, OwnerPlayerId);
+
+        }
     }
 
     public override bool CheckDropable(Block block)
@@ -27,8 +29,9 @@ public class SpellCard : Card
     {
         blocks.Clear();
         Debug.Log("start drag");
-        spellInstance = Instantiate(spellPrefab, gameObject.transform);
-        spellInstance.GetComponent<Spell>().Init(this);
+        spellInstance = Instantiate(template.SpellPrefab, gameObject.transform);
+        
+        spellInstance.GetComponent<Spell>().Init(this, OwnerPlayerId);
         spellInstance.transform.localPosition = Vector3.zero;
 
     }

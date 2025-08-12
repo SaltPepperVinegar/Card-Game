@@ -32,7 +32,10 @@ public class DeckBuildTracker : MonoBehaviour
             text.color = unconfirmColor;
         }
         DeckTransfer.Instance.CheckValidity();
-        text.text = group.MountedCards.Count + " \\ " + DeckCount;
+        if (group != null && group.MountedCards != null)
+        {
+            text.text = group.MountedCards.Count + " \\ " + DeckCount;
+        }
     }
 
     void OnEnable()

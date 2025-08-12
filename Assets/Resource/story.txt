@@ -1,0 +1,34 @@
+-Welcome to a world with magic! Defeat all the enemies and you will win!
+-“Ϟor'quɨn dra’vel ʘⱷ… maer’vyn kal ѬψҨ…”
+.....................
+-Wait, you mean you missed the magic lesson MAGC10001 and haven't learn magic at all?
+-Hummm... Let me install an translate program to you.
+
+$ curl -O https://arcane-tools.unimelb.edu/magicode/installer.sh
+$ chmod +x installer.sh
+$ ./installer.sh
+@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 	Dload  Upload   Total   Spent    Left  Speed
+100 15500  100 15500    0     0  32000      0 --:--:-- --:--:-- --:--:-- 32000
+Saving to: ‘installer.sh’
+
+
+ Dra’vel Initium v3.Ϟ 
+――――――――――――――――――――
+
+Linking ψ-core... ✔  
+Sync to ÆNode... ✔  
+Loading sigils... [▓▓▓▓▓▓▓▓▓▓] Done  
+Decrypting: dra’vel.kry ✔  
+Binding Module: ψMap 2.3 ✔  
+
+↯ Path Engraved: /usr/local/bin/dra’vel  
+↯ Config: ~/.dra’vel/sigil.ϟonf  
+
+✔ Complete — Run: `dra’vel -decode`
+
+Installation complete!
+
+To start tutorial, run:
+$ magicode -h

@@ -1126,6 +1126,8 @@ MonoBehaviour:
   InteractEffect:
     m_PersistentCalls:
       m_Calls: []
+  ElementCount: 0
+  isPlayer: 0
 --- !u!114 &1508519422818317609
 MonoBehaviour:
   m_ObjectHideFlags: 0

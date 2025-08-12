@@ -86,7 +86,10 @@ public class Creature : MonoBehaviour
         ActionPointRefill = ActionPoint = template.actionPoint;
         ActionPoint = 1;
         Image.sprite = template.sprite;
-        AddElement(template.element);
+        foreach (Element element in template.element)
+        {
+            AddElement(element);
+        }
     }
 
     //check perform on the initiator action
@@ -142,6 +145,8 @@ public class Creature : MonoBehaviour
             GetComponent<ElementBarHandler>().AddElement(element);
             ElementCount++;
         }
+
+        
     }
 
     public bool CanAddElement(Element element)

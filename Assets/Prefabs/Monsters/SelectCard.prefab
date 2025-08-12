@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617618776902060248, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       propertyPath: DragGates.Gates.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6617618776902060248, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       propertyPath: DragGates.Gates.Array.data[1]
@@ -557,6 +557,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1689174951601951915, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+    - {fileID: 4068170938164983120, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+    - {fileID: 4682731058287441734, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
+    - {fileID: 5156580488366421621, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5703934931721030314, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
     - {fileID: 6126713583214881398, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
@@ -570,14 +573,11 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: -2275605168361899724}
     - targetCorrespondingSourceObject: {fileID: 1378863674091576227, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
-      insertIndex: 8
+      insertIndex: 6
       addedObject: {fileID: 978440343401178722}
     - targetCorrespondingSourceObject: {fileID: 1378863674091576227, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 695928345554352263}
-    - targetCorrespondingSourceObject: {fileID: 1378863674091576227, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4647780768387378855}
+      addedObject: {fileID: 3155020230384716039}
   m_SourcePrefab: {fileID: 100100000, guid: d4aa526a332a63b4aba658161c612f14, type: 3}
 --- !u!1 &159249280873958933 stripped
 GameObject:
@@ -603,6 +603,8 @@ MonoBehaviour:
   Description: {fileID: 159249282257754459}
   Health: {fileID: 2211736852692229615}
   Attack: {fileID: 2211736853550467824}
+  HealthComponent: {fileID: 0}
+  AttackComponent: {fileID: 0}
   Image: {fileID: 159249282467384192}
 --- !u!114 &978440343401178722
 MonoBehaviour:
@@ -617,21 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
---- !u!114 &695928345554352263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159249280873958933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261d4f62fc3d45e45b63de0d8ac914ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 293d65cd907fe25488936171774613e9, type: 2}
---- !u!58 &4647780768387378855
-CircleCollider2D:
+--- !u!61 &3155020230384716039
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -659,12 +648,22 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.31
+  m_Size: {x: 1, y: 1.6}
+  m_EdgeRadius: 0
 --- !u!114 &159249281411863494 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1378863673549506160, guid: d4aa526a332a63b4aba658161c612f14, type: 3}

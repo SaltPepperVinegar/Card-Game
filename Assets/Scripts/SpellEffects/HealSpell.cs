@@ -11,12 +11,20 @@ public class HealSpell : SpellEffect
         {
             if (block.Occupied)
             {
-                if (block.creature.ownerPlayerId == spellCasterPlayerId)
+                if (block.creature.ownerPlayerId == spellCasterPlayerId  && !block.creature.isPlayer)
                 {
                     block.creature.Health += 2;
                 }
             }
         }
+    }
+    public override bool SpellApplicable(Block block, int spellCasterPlayerId)
+    {
+        if (block.Occupied && block.creature.ownerPlayerId == spellCasterPlayerId  && !block.creature.isPlayer)
+        {
+            return true;
+        }
+        return false;
     }
 
 }

@@ -22,7 +22,10 @@ public class CardSetup : MonoBehaviour
     public List<TimedEvent> OnSetupCompleteEventChain;
 
     public List<CardGroup> GroupsToTransferDeck;
-    public GameObject TransferCardPrefab;
+    public GameObject SpellCardPrefab;
+    public GameObject CreatureCardPrefab;
+    public GameObject EvolutionCardPrefab;
+
     void Start()
     {
         if (RunOnStart)
@@ -61,11 +64,27 @@ public class CardSetup : MonoBehaviour
 
                 foreach (CardTemplate template in Data[j])
                 {
-                    var newThing = Instantiate(TransferCardPrefab, Vector3.down * 10, Quaternion.identity);
+                    GameObject newThing = null;
+                    switch (template.cardType)
+                    {
+                        case (CardType.Creature):
+                            newThing = Instantiate(CreatureCardPrefab, Vector3.down * 10, Quaternion.identity);
+                            break;
+                        case (CardType.Enhancement):
+                            newThing = Instantiate(EvolutionCardPrefab, Vector3.down * 10, Quaternion.identity);
+                            break;
+                        case (CardType.Spell):
+                            newThing = Instantiate(SpellCardPrefab, Vector3.down * 10, Quaternion.identity);
+                            break;
+                        default:
+                            newThing = Instantiate(CreatureCardPrefab, Vector3.down * 10, Quaternion.identity);
+                            break;
+                    }
                     newThing.GetComponent<CardDisplay>().template = template;
                     newThing.GetComponent<Card>().template = template;
                     tranferThingDict[group].Add(newThing);
                 }
+                j++;
             }
             DeckTransfer.Instance.FinishLoad();
         }

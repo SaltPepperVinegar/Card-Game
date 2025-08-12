@@ -10,13 +10,24 @@ public class DestroySpell : SpellEffect
         {
             if (block.Occupied)
             {
-                if (block.creature.ownerPlayerId != spellCasterPlayerId)
+                if (block.creature.ownerPlayerId != spellCasterPlayerId && !block.creature.isPlayer)
                 {
+                    Creature creature = block.creature;
                     block.LeaveBlock();
-                    Destroy(block.creature.gameObject);
+                    Destroy(creature.gameObject);
+
                 }
             }
         }
+        
+    }
+    public override bool SpellApplicable(Block block, int spellCasterPlayerId)
+    {
+        if (block.Occupied && block.creature.ownerPlayerId != spellCasterPlayerId && !block.creature.isPlayer)
+        {
+            return true;
+        }
+        return false;
     }
 
 }

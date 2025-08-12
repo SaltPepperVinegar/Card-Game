@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: IceGolem
   m_EditorClassIdentifier: 
-  CardName: Ice Golem
+  CardName: Frost Golem
   description: 'Frost: Attack freezes enemy for 1 round'
-  element: 4
-  health: 6
+  element: 04000000
+  health: 4
   attack: 1
   cost:
   - element: 4
-    Cost: 1
-  sprite: {fileID: 0}
-  upgrades: {fileID: 0}
-  effects: []
-  moveCost: 0
+    Cost: 2
+  sprite: {fileID: 21300000, guid: 5e71ce5161b370a4a86aeaf59ef00649, type: 3}
+  cardType: 0
+  SpellPrefab: {fileID: 0}
   actionPoint: 1

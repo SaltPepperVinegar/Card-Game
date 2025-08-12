@@ -10,12 +10,11 @@ public class CardTemplate : ScriptableObject
 {
     public String CardName;
     [TextArea(3, 10)] public String description;
-    public Element element;
+    public Element[] element;
     public int health;
     public int attack;
     public ElementalCost[] cost;
     public Sprite sprite;
-    public CreatureType creatureType;
 
     public CardType cardType;
     public GameObject SpellPrefab;

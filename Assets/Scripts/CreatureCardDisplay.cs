@@ -15,7 +15,8 @@ public class CreatureCardDisplay : CardDisplay
     public TextMeshPro Description;
     public TextMeshPro Health;
     public TextMeshPro Attack;
-
+    public GameObject HealthComponent;
+    public GameObject AttackComponent;
     public SpriteRenderer Image;
     public void Start()
     {
@@ -25,8 +26,35 @@ public class CreatureCardDisplay : CardDisplay
         }
         CardName.text = template.CardName;
         Description.text = template.description;
-        Health.text = template.health.ToString();
-        Attack.text = template.attack.ToString();
+        if (template.cardType == CardType.Spell)
+        {
+            Destroy(HealthComponent);
+            Destroy(AttackComponent);
+        }
+        if (Health != null)
+        {
+            if (template.cardType == CardType.Enhancement)
+            {
+                Health.text = "+" + template.health;
+            }
+            else
+            {
+                Health.text = template.health.ToString();
+            }
+
+        }
+        if (Attack != null)
+        {
+            if (template.cardType == CardType.Enhancement)
+            {
+                Attack.text = "+" + template.attack;
+            }
+            else
+            {
+                Attack.text = template.attack.ToString();
+            }
+
+        }
 
         Image.sprite = template.sprite;
 

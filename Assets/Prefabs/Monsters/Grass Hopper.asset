@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Grass Hopper
   description: 'Verdant: Recover health for every damage higher than enemy.'
-  element: 5
+  element: 05000000
   health: 4
   attack: 3
   cost:
   - element: 5
     Cost: 1
   sprite: {fileID: 0}
-  upgrades: {fileID: 0}
-  effects: []
-  moveCost: 0
+  cardType: 0
+  SpellPrefab: {fileID: 0}
   actionPoint: 1

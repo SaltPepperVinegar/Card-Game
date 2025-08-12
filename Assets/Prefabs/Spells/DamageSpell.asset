@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: DamageSpell
   m_EditorClassIdentifier: 
-  CardName: 
-  description: 
-  element: 0
+  CardName: Fire Ball
+  description: Dealt 2 damage to every creature in range
+  element: 00000000
   health: 0
   attack: 0
-  cost: []
+  cost:
+  - element: 0
+    Cost: 4
   sprite: {fileID: 0}
-  creatureType: 0
-  cardType: 0
+  cardType: 2
+  SpellPrefab: {fileID: 2278456522138533364, guid: 207acaae16436d84e964af4349c3870c, type: 3}
   actionPoint: 1

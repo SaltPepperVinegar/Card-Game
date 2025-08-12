@@ -1892,6 +1892,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 3606869431380037444, guid: b3555baecdb40194fb77f409ce42142c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606869431380037444, guid: b3555baecdb40194fb77f409ce42142c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606869431380037444, guid: b3555baecdb40194fb77f409ce42142c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4364,7 +4376,9 @@ MonoBehaviour:
   GroupsToTransferDeck:
   - {fileID: 190633735}
   - {fileID: 1970082754}
-  TransferCardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+  SpellCardPrefab: {fileID: 159249280873958933, guid: 9d7e6bc4e5b410547bd5802c083603b4, type: 3}
+  CreatureCardPrefab: {fileID: 159249280873958933, guid: 9f20f56233c7bfe46bfa9fa1f28c1b16, type: 3}
+  EvolutionCardPrefab: {fileID: 159249280873958933, guid: d53676b842f1df74fbc8fa39b39bd8ca, type: 3}
 --- !u!1001 &8131157071342848855
 PrefabInstance:
   m_ObjectHideFlags: 0

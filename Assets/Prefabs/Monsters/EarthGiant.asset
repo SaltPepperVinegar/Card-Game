@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: EarthGiant
   m_EditorClassIdentifier: 
-  CardName: EarthGiant
+  CardName: Pebble Golem
   description: 'Terra: Gain shield 1/2 of your Health'
-  element: 2
-  health: 4
-  attack: 2
+  element: 02000000
+  health: 3
+  attack: 3
   cost:
   - element: 2
-    Cost: 1
-  sprite: {fileID: 0}
-  upgrades: {fileID: 0}
-  effects: []
-  moveCost: 0
+    Cost: 3
+  sprite: {fileID: 21300000, guid: a489cfddb38c1284aa4727dcd6e8a683, type: 3}
+  cardType: 0
+  SpellPrefab: {fileID: 0}
   actionPoint: 1

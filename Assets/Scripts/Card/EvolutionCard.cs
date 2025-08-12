@@ -15,7 +15,9 @@ public class EvolutionCard : Card
         Block block = cardGroup?.GetComponent<Block>();
         if (block != null)
         {
-            block.creature.AddElement(template.element);
+            block.creature.Attack += template.attack;
+            block.creature.Health += template.health;
+            block.creature.AddElement(template.element[0]);
         }
     }
 
@@ -23,7 +25,8 @@ public class EvolutionCard : Card
     {
         if (block.Occupied
             && block.creature.ownerPlayerId == OwnerPlayerId
-            && block.creature.CanAddElement(template.element))
+            && block.creature.CanAddElement(template.element[0])
+            && !block.creature.isPlayer)
         {
             return true;
         }

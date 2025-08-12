@@ -11,12 +11,21 @@ public class ShieldSpell : SpellEffect
         {
             if (block.Occupied)
             {
-                if (block.creature.ownerPlayerId == spellCasterPlayerId)
+                if (block.creature.ownerPlayerId == spellCasterPlayerId && !block.creature.isPlayer)
                 {
                     Effect(block.creature);
                 }
             }
         }
+    }
+
+    public override bool SpellApplicable(Block block, int spellCasterPlayerId)
+    {
+        if (block.Occupied && block.creature.ownerPlayerId == spellCasterPlayerId && !block.creature.isPlayer)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void Effect(Creature creature)

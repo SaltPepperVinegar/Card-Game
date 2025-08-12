@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
+  m_Name: Grass Hopper
+  m_EditorClassIdentifier: 
+  CardName: Verdant Upgrade
+  description: Cast on a creature to gain Verdant Element
+  element: 05000000
+  health: 1
+  attack: 3
+  cost:
+  - element: 5
+    Cost: 3
+  sprite: {fileID: 0}
+  cardType: 1
+  SpellPrefab: {fileID: 0}
+  actionPoint: 1

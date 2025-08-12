@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireColor: {r: 0.8113208, g: 0.119912125, b: 0.119912125, a: 1}
   waterColor: {r: 0, g: 0.29446402, b: 0.9433962, a: 1}
-  earthColor: {r: 0.8238993, g: 0.6448737, b: 0.14249818, a: 1}
+  earthColor: {r: 0.6603774, g: 0.4257202, b: 0.16820925, a: 1}
   lightningColor: {r: 0.72848153, g: 0.27765903, b: 0.8742138, a: 1}
   iceColor: {r: 0.2784314, g: 0.77647066, b: 0.97647065, a: 1}
   grassColor: {r: 0.28395635, g: 0.9056604, b: 0.27055883, a: 1}

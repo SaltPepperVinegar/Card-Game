@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: LightningCube
   m_EditorClassIdentifier: 
-  CardName: Electro Spirit
+  CardName: Spark Golem
   description: 'Electro: move or attack immediately.'
-  element: 3
-  health: 3
+  element: 03000000
+  health: 1
   attack: 2
   cost:
   - element: 3
     Cost: 1
-  sprite: {fileID: 0}
-  upgrades: {fileID: 0}
-  effects: []
-  moveCost: 0
+  sprite: {fileID: 21300000, guid: d2bd5ad13e395f546af423f5e786ed16, type: 3}
+  cardType: 0
+  SpellPrefab: {fileID: 0}
   actionPoint: 1
