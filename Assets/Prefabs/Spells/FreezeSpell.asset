@@ -20,7 +20,7 @@ MonoBehaviour:
   cost:
   - element: 4
     Cost: 3
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: b399ae27595a49d4298a9424f0b51c2c, type: 3}
   cardType: 2
   SpellPrefab: {fileID: 2278456522138533364, guid: 191c74f8a837d8449954965c58b2bf0d, type: 3}
   actionPoint: 1

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f06378635c09c24ea8b5acf63eae408, type: 3}
   m_Name: Grass Hopper
   m_EditorClassIdentifier: 
-  CardName: Grass Hopper
-  description: 'Verdant: Recover health for every damage higher than enemy.'
+  CardName: Thorn Crawler
+  description: 'Verdant: Recover health for every damage higher than enemy''s damage.'
   element: 05000000
-  health: 4
-  attack: 3
+  health: 2
+  attack: 4
   cost:
   - element: 5
-    Cost: 1
+    Cost: 2
   sprite: {fileID: 0}
   cardType: 0
   SpellPrefab: {fileID: 0}

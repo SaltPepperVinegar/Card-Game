@@ -24,7 +24,8 @@ public class GameOver : Effect
     void OnDestroy()
     {
         Debug.Log("Player " + GetComponent<Creature>().ownerPlayerId + "Loss");
-        SceneManager.LoadScene("End" + GetComponent<Creature>().ownerPlayerId);
+        int playerWon = (GetComponent<Creature>().ownerPlayerId + 1);
+        SceneManager.LoadScene("End" + playerWon);
 
     }
 }

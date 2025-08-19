@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
   m_sharedMaterial: {fileID: 3375153774842701680, guid: fc022b5f02300eb46abd1d5858b2282f, type: 2}
@@ -1030,7 +1030,7 @@ MonoBehaviour:
   template: {fileID: 11400000, guid: 68fc2f4a9f53d564388af6f10c98c017, type: 2}
   ownerPlayerId: 1
   block: {fileID: 0}
-  currentHealth: 2
+  currentHealth: 15
   Image: {fileID: 0}
   healthText: {fileID: 6612670208240128608}
   attackText: {fileID: 4422406464280363128}

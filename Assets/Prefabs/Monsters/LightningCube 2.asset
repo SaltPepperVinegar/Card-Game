@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightningCube 2
   m_EditorClassIdentifier: 
   CardName: Thunder Golem
-  description: 'Electro: move or attack immediately.'
+  description: 'Electro: move one extra step first turn.'
   element: 03000000
   health: 3
   attack: 5
